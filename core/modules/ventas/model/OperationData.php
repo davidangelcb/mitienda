@@ -73,7 +73,7 @@ class OperationData {
 
 
 	public static function getAllByDateOfficial($start,$end){
- $sql = "select * from ".self::$tablename." where date(created_at) > \"$start\" and date(created_at) <= \"$end\" and is_oficial=1 order by created_at desc";
+ $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and is_oficial=1 order by created_at desc";
 		if($start == $end){
 		 $sql = "select * from ".self::$tablename." where date(created_at) = \"$start\" order by created_at desc";
 		}
